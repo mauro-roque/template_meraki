@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Fontes Montserrat Bold e Open sans-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wdth@75..100&display=swap"
+        rel="stylesheet">
+
+    <title>nome_site</title>
+    <style>
+        /* Para rolagem da tela ficar suave*/
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Helvetica', sans-serif;
+        }
+
+        body {
+            color: #fff;
+            background-color: #161b2b;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        header {
+            padding: 20px 0;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: "Montserrat", sans-serif;
+            font-optical-sizing: auto;
+            font-weight: bold;
+            font-size: 25px;
+
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li {
+            margin-left: 30px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: opacity 0.3s;
+        }
+
+        nav ul li a:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 40px 0 80px 0;
+            display: flex;
+
+            justify-content: space-between;
+        }
+
+        .hero-content {
+            flex: 1;
+            padding-right: 40px;
+        }
+
+        .hero-image {
+            flex: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero h1 {
+            font-family: "Montserrat", sans-serif;
+            font-size: 60px;
+            font-weight: bold;
+            margin: 10px 0 20px 0;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-family: "Open Sans", sans-serif;
+            font-size: 20px;
+            font-weight: 400;
+            color: #b0b7c3;
+            margin-bottom: 30px;
+            max-width: 500px;
+            word-break: break-all;
+
+            color: #F5D13C;
+        }
+
+        /* Features section */
+        .features {
+            padding: 40px 0;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .features-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .feature-box {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 20px;
+        }
+
+        .feature-title {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+
+        .feature-text {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+
+            color: #666;
+        }
+
+        /* Location section */
+        .location {
+            padding: 80px 0;
+            background-color: #f5f5f7;
+            color: #333;
+        }
+
+        .location-container {
+            display: flex;
+            align-items: stretch;
+        }
+
+        .location-info {
+            flex: 1;
+            padding-top: 10px;
+        }
+
+        .location-map {
+            flex: 1;
+            background-color: #e5e5e5;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .map-pin {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 30px;
+            height: 30px;
+        }
+
+        .location h2 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 45px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+        }
+
+        .contact-info p {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+            margin-bottom: 10px;
+            color: #F5D13C;
+        }
+
+        /* Testimonials section */
+        .testimonials {
+            padding: 80px 0;
+            text-align: center;
+            background-color: #fff;
+            color: #333;
+        }
+
+        .testimonials h2 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .testimonials-intro {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+            max-width: 600px;
+            margin: 0 auto 50px;
+            color: #666;
+        }
+
+        .testimonials-container {
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .testimonial {
+            flex: 1;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: left;
+        }
+
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-text {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+
+        .testimonial-name {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        /* Contact section */
+        .contact {
+            padding: 80px 0;
+            background-color: #161b2b;
+            color: #fff;
+        }
+
+        .contact-container {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .contact-content {
+            flex: 1;
+            padding-right: 0px;
+        }
+
+        .contact-form {
+            flex: 1;
+            background-color: #fff;
+            padding: 50px;
+            border-radius: 8px;
+            color: #333;
+        }
+
+        .contact h2 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 60px;
+            margin: 0px 20px 0px 0px;
+        }
+
+        .contact-form h3 {
+            font-family: "Montserrat", sans-serif;
+            font-weight: bold;
+            font-size: 55px;
+        }
+
+        .contact-form p {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+            margin-bottom: 30px;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .btn-submit {
+            width: 100%;
+            padding: 20px;
+            background-color: #4169e1;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 5px;
+        }
+
+        .btn-submit:hover {
+            background-color: #3050c5;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px 0;
+            background-color: #4ecca3;
+            color: #fff;
+            text-align: center;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-text {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+        }
+
+        .footer-cta {
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 17px;
+            padding: 10px 20px;
+            background-color: #fff;
+            color: #333;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Fonts e tamanhos */
+        li {
+            font-family: "Open Sans", sans-serif;
+            font-size: 15px;
+            font-optical-sizing: auto;
+            font-weight: 400;
+        }
+
+
+        /* Responsive styles */
+        @media (max-width: 992px) {
+            nav ul li {
+                margin: 0 30px;
+            }
+
+            .hero,
+            .contact-container {
+                flex-direction: column;
+                padding: 0px 0px 20px 0px;
+            }
+
+            .hero-content,
+            .contact-content {
+                padding-right: 0;
+                margin-bottom: 0px;
+            }
+
+            .hero p {
+                margin-bottom: 40px;
+            }
+
+            .testimonials {
+                padding-bottom: 35px;
+            }
+
+            .contact {
+                padding-top: 35px;
+                padding-bottom: 0px;
+            }
+
+            .contact-form {
+                margin-top: 35px;
+            }
+
+            .features-container,
+            .testimonials-container {
+                flex-direction: column;
+            }
+
+            .feature-box,
+            .testimonial {
+                margin-bottom: 30px;
+            }
+
+            .location-container {
+                flex-direction: column;
+            }
+
+            .location-map {
+                margin-top: 20px;
+                min-height: 250px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+            }
+
+            nav ul {
+                margin-top: 20px;
+            }
+
+            nav ul li {
+                margin: 0 30px;
+            }
+
+            .hero {
+                font-size: 32px;
+            }
+        }
+
+        .destaque_txt_banco_retirar_dps {
+            color: #F5D13C;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo destaque_txt_banco_retirar_dps">nome_site</a>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#local">Local</a></li>
+                    <li><a href="#recomendacoes">Recomendações</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero">
+            <div class="hero-content">
+                <h1>Qualidade Comprovada e Garantida</h1>
+                <p>sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_sobre_site_
+                </p>
+            </div>
+            <div class="hero-image">
+                <img src="./img/imagemPrincipal.png" alt="Profissional trabalhando no laptop">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container features-container">
+            <div class="feature-box">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect x="3" y="3" width="18" height="18" rx="2" stroke="#000" stroke-width="2" />
+                    <path d="M3 9H21" stroke="#000" stroke-width="2" />
+                </svg>
+                <h3 class="feature-title">Qualidade Garantida</h3>
+                <p class="feature-text">Nosso foco é entregar resultados com precisão, eficiência e qualidade em cada
+                    detalhe.</p>
+            </div>
+            <div class="feature-box">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="12" cy="12" r="9" stroke="#000" stroke-width="2" />
+                    <path d="M12 7V12L15 15" stroke="#000" stroke-width="2" stroke-linecap="round" />
+                </svg>
+                <h3 class="feature-title">Inovação Criativa</h3>
+                <p class="feature-text">Criamos soluções inovadoras para experiências únicas e surpreendentes.</p>
+            </div>
+            <div class="feature-box">
+                <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M3 10C3 8.89543 3.89543 8 5 8H19C20.1046 8 21 8.89543 21 10V18C21 19.1046 20.1046 20 19 20H5C3.89543 20 3 19.1046 3 18V10Z"
+                        stroke="#000" stroke-width="2" />
+                    <path d="M7 8V6C7 4.89543 7.89543 4 9 4H15C16.1046 4 17 4.89543 17 6V8" stroke="#000"
+                        stroke-width="2" />
+                    <circle cx="12" cy="14" r="2" stroke="#000" stroke-width="2" />
+                </svg>
+                <h3 class="feature-title">Detalhes Importam</h3>
+                <p class="feature-text">Cada cliente é único, por isso oferecemos um atendimento personalizado e de alta
+                    qualidade.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="local" class="location">
+        <div class="container location-container">
+            <div class="location-info">
+                <h2>Local & Telefone</h2>
+                <div class="contact-info">
+                    <p><strong style="color: #333;">Nome:</strong> nome_site</p>
+                    <p><strong style="color: #333;">Telefone:</strong> telefone_empresa</p>
+                    <p><strong style="color: #333;">Email:</strong> email_empresa</p>
+                    <p><strong style="color: #333;">Local:</strong> local_empresa</p>
+                </div>
+            </div>
+            <div class="location-map">
+                <svg class="map-pin" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                        fill="#000" />
+                    <path
+                        d="M12 22C16 18 20 14.4183 20 10C20 5.58172 16.4183 2 12 2C7.58172 2 4 5.58172 4 10C4 14.4183 8 18 12 22Z"
+                        stroke="#000" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="recomendacoes" class="testimonials">
+        <div class="container">
+            <h2>O Que Nossos Clientes Dizem</h2>
+            <p class="testimonials-intro">A confiança e satisfação de nossos clientes são a nossa maior prioridade. Veja
+                o que eles têm a dizer sobre nossos serviços!</p>
+
+            <div class="testimonials-container">
+                <div class="testimonial">
+                    <img src="./img/recomendacoes1.png" alt="Gabriel" class="testimonial-avatar">
+                    <p class="testimonial-text">"Recomendo de olhos fechados! O serviço foi excelente e superou todas as
+                        expectativas."</p>
+                    <p class="testimonial-name">Gabriel Gonçalves</p>
+                </div>
+
+                <div class="testimonial">
+                    <img src="./img/recomendacoes2.png" alt="Mauro Roque" class="testimonial-avatar">
+                    <p class="testimonial-text">"Muito satisfeito com a experiência. Atendimento de qualidade e
+                        resultados incríveis!"</p>
+                    <p class="testimonial-name">Mauro Roque</p>
+                </div>
+
+                <div class="testimonial">
+                    <img src="./img/recomendacoes3.png" alt="Lucas Adriano" class="testimonial-avatar">
+                    <p class="testimonial-text">"Estou impressionado com o profissionalismo e dedicação. Sem dúvida, uma
+                        escolha certeira!"</p>
+                    <p class="testimonial-name">Lucas Adriano</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="contact">
+        <div class="container contact-container">
+            <div class="contact-content">
+                <h2>Adoraríamos ouvir sua opinião!<br>Envie-nos seu feedback</h2>
+            </div>
+            <div class="contact-form">
+                <h3>Contato</h3>
+                <p>Envie seu e-mail para uma resposta!</p>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Nome">
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" placeholder="Mensagem"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <p class="footer-text">WebSite criado pela equipe meraki</p>
+            <a href="#" class="footer-cta">Crie seu website fácil</a>
+        </div>
+    </footer>
+    <script>
+        alert(
+            "Olá, seja bem-vindo ao nosso site template de exemplo!\n\n" +
+            "1. Todos os textos destacados em amarelo representam campos que serão preenchidos no formulário ao criar o site.\n" +
+            "2. Eles serão exibidos na cor correspondente automaticamente, então não se preocupe! - (NÃO SERÁ AMARELO)\n" +
+            "3. É importante preencher corretamente todos os campos no formulário para que o site funcione como esperado.\n\n"
+        );
+    </script>
+</body>
+
+</html>
